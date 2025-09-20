@@ -32,7 +32,7 @@ def wpm_test(stdscr):
 
     while True:
         stdscr.clear()
-        display_text(stdscr,target_test,current_text)
+        display_text(stdscr,target_text,current_text)
         stdscr.refresh()
 
         key  = stdscr.getkey()
