@@ -32,7 +32,7 @@ def load_text():
 
 def wpm_test(stdscr):
     # target_text = "Hello world this is some test text for this application"
-    target_text = load_text
+    target_text = load_text()
     current_text = []
     wpm = 0
     start_time = time.time()
@@ -76,6 +76,7 @@ def main(stdscr):
         stdscr.addstr(2, 0, "You Completed the Text!! Press any key to continue")
         key = stdscr.getkey()
         if ord(key) == 27:
+            stdscr.addstr(2, 0, "Thanks for using")
             break
             
 
