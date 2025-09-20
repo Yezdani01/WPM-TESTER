@@ -11,13 +11,16 @@ def start_screen(stdscr):
 
 
 def display_text(stdscr,target,current,wpm = 0):
-    stdscr.addstr(target_text)
+    stdscr.addstr(target)
 
-    for i, char in enumerate(current_text):
-        stdscr.addstr(char, curses.color_pair(1))
+    for i, char in enumerate(current):
+        correct_char = target[i]
+        color = curses.color_pair(1)
+        if char != correct_char:
+            color = curses.color_pair(2)
+        
+        stdscr.addstr(0 , i, char, color)
     
-
-
 
 
 
@@ -29,7 +32,7 @@ def wpm_test(stdscr):
 
     while True:
         stdscr.clear()
-
+        display_text(stdscr,target_test,current_text)
         stdscr.refresh()
 
         key  = stdscr.getkey()
