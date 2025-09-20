@@ -31,7 +31,8 @@ def load_text():
         return random.choice(lines).strip()
 
 def wpm_test(stdscr):
-    target_text = "Hello world this is some test text for this application"
+    # target_text = "Hello world this is some test text for this application"
+    target_text = load_text
     current_text = []
     wpm = 0
     start_time = time.time()
