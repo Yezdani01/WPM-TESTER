@@ -1,0 +1,5 @@
+Hello world my name is Hamza and I am typing this 
+Hello world this is some test text for this application
+This is another block of text for this project
+okay this is another block of text for this project now
+To add more block of text you can edit the text file of this project and then save it and run the code
