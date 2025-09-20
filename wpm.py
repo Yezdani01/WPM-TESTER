@@ -1,5 +1,6 @@
 import curses
 from curses import wrapper
+import time
 
 
 def start_screen(stdscr):
@@ -24,14 +25,18 @@ def display_text(stdscr,target,current, wpm = 0):
     
 
 
-
 def wpm_test(stdscr):
     target_text = "Hello world this is some test text for this application"
     current_text = []
     wpm = 0
+    start_time = time.time()
 
 
     while True:
+        time_elapsed = max(time.time() - start_time, 1)
+        wpm = len(current_text) / (time_elapsed / 60)
+
+
         stdscr.clear()
         display_text(stdscr,target_text,current_text,wpm)
         stdscr.refresh()
